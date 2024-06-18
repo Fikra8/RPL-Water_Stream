@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card .card-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card .card-body .fa {
+      font-size: 2.5rem;
+    }
+    .list-group-item a {
+      display: flex;
+      align-items: center;
+    }
+    .list-group-item a .fa {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <%- include('./navBarAdmin') %>
+
+  <div class="container mt-5">
+    <h1 class="mb-4">Admin Dashboard</h1>
+
+    <div class="row mb-4">
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-primary">
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">Users</h5>
+              <p class="card-text"><%= userCount %></p>
+            </div>
+            <i class="fa fa-users"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-success">
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">Products</h5>
+              <p class="card-text"><%= productCount %></p>
+            </div>
+            <i class="fa fa-boxes"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-white bg-info">
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">Subscriptions</h5>
+              <p class="card-text"><%= subscriptionCount %></p>
+            </div>
+            <i class="fa fa-file-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        <a href="/admin/manage-products">
+          <i class="fa fa-cogs"></i> Manage Products
+        </a>
+      </li>
+      <li class="list-group-item">
+        <a href="/admin/manage-subscriptions">
+          <i class="fa fa-cogs"></i> Manage Subscriptions
+        </a>
+      </li>
+      <li class="list-group-item">
+        <a href="/admin/manage-users">
+          <i class="fa fa-cogs"></i> Manage Users
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

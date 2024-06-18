@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f7f7f7;
+    }
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-card {
+      padding: 3rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: #ffffff;
+      width: 100%;
+      max-width: 400px;
+    }
+    .login-card .form-control {
+      border-radius: 20px;
+      padding-left: 2.5rem;
+    }
+    .login-card .btn-primary {
+      border-radius: 20px;
+    }
+    .login-card .input-icon {
+      position: absolute;
+      left: 10px;
+      top: 72%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+    .login-card .form-group {
+      position: relative;
+    }
+    .login-card p a {
+      color: #007bff;
+    }
+    .login-card p a:hover {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+    <%- include ('./navBarHome') %>
+  <div class="login-container">
+    <div class="login-card">
+      <h1 class="text-center">Login</h1>
+      <form action="/login" method="POST" class="mt-4">
+        <div class="form-group">
+          <span class="input-icon"><i class="fas fa-envelope"></i></span>
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+          <span class="input-icon"><i class="fas fa-lock"></i></span>
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <p class="text-center mt-3">Don't have an account? <a href="/register">Register</a></p>
+    </div>
+  </div>
+</body>
+</html>
